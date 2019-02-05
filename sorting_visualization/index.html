@@ -1,0 +1,75 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="rustdoc"><meta name="description" content="API documentation for the Rust `sorting_visualization` crate."><meta name="keywords" content="rust, rustlang, rust-lang, sorting_visualization"><title>sorting_visualization - Rust</title><link rel="stylesheet" type="text/css" href="../normalize.css"><link rel="stylesheet" type="text/css" href="../rustdoc.css" id="mainThemeStyle"><link rel="stylesheet" type="text/css" href="../dark.css"><link rel="stylesheet" type="text/css" href="../light.css" id="themeStyle"><script src="../storage.js"></script><noscript><link rel="stylesheet" href="../noscript.css"></noscript><link rel="shortcut icon" href="../favicon.ico"><style type="text/css">#crate-search{background-image:url("../down-arrow.svg");}</style></head><body class="rustdoc mod"><!--[if lte IE 8]><div class="warning">This old browser is unsupported and will most likely display funky things.</div><![endif]--><nav class="sidebar"><div class="sidebar-menu">&#9776;</div><a href='..//index.html'><img src='../rust-logo.png' alt='logo' width='100'></a><p class='location'>Crate sorting_visualization</p><div class="sidebar-elems"><a id='all-types' href='all.html'><p>See all sorting_visualization's items</p></a><div class="block items"><ul><li><a href="#modules">Modules</a></li><li><a href="#constants">Constants</a></li><li><a href="#functions">Functions</a></li></ul></div><p class='location'></p><script>window.sidebarCurrent = {name: 'sorting_visualization', ty: 'mod', relpath: '../'};</script></div></nav><div class="theme-picker"><button id="theme-picker" aria-label="Pick another theme!"><img src="../brush.svg" width="18" alt="Pick another theme!"></button><div id="theme-choices"></div></div><script src="../theme.js"></script><nav class="sub"><form class="search-form js-only"><div class="search-container"><div><select id="crate-search"><option value="All crates">All crates</option></select><input class="search-input" name="search" autocomplete="off" spellcheck="false" placeholder="Click or press ‘S’ to search, ‘?’ for more options…" type="search"></div><a id="settings-menu" href="../settings.html"><img src="../wheel.svg" width="18" alt="Change settings"></a></div></form></nav><section id="main" class="content"><h1 class='fqn'><span class='out-of-band'><span id='render-detail'><a id="toggle-all-docs" href="javascript:void(0)" title="collapse all docs">[<span class='inner'>&#x2212;</span>]</a></span><a class='srclink' href='../src/sorting_visualization/main.rs.html#1-111' title='goto source code'>[src]</a></span><span class='in-band'>Crate <a class="mod" href=''>sorting_visualization</a></span></h1><div class='docblock'><h1 id="sorting-visualization" class="section-header"><a href="#sorting-visualization">sorting-visualization</a></h1>
+<p><a href="https://travis-ci.org/dmitmel/sorting-visualization"><img src="https://img.shields.io/travis/dmitmel/sorting-visualization.svg?style=flat-square" alt="Travis CI" /></a>
+<a href="https://dmitmel.github.io/sorting-visualization"><img src="https://img.shields.io/badge/docs-GH%20pages-blue.svg?style=flat-square" alt="docs: GH pages" /></a>
+<a href="https://github.com/dmitmel/sorting-visualization/pulls"><img src="https://img.shields.io/badge/contributors-welcome-brightgreen.svg?style=flat-square" alt="contributors: welcome" /></a></p>
+<p>A <a href="https://www.rust-lang.org/">Rust</a> program for visualizing sorting algorithms which uses <a href="http://www.piston.rs/">Piston</a> for graphics. Inspired by <a href="https://github.com/Hopson97/Sort-Algorithm-Visualiser"><strong>Hopson97/Sort-Algorithm-Visualiser</strong></a>.</p>
+<p><a href="https://gist.github.com/dmitmel/f8664421b547577065912c3246f4c1e9"><img src="https://i.imgur.com/jyPDiWX.gif" alt="Demo" /></a></p>
+<h2 id="setup" class="section-header"><a href="#setup">Setup</a></h2>
+<pre><code class="language-bash">git clone https://github.com/dmitmel/sorting-visualization
+cd sorting-visualization
+cargo build --release
+</code></pre>
+<h2 id="usage" class="section-header"><a href="#usage">Usage</a></h2>
+<pre><code class="language-bash"># see 'Features' section for the list of supported algorithms and their IDs
+# and use the --help flag to print all available animation options
+cargo run &lt;algorithm&gt;
+# list all available algorithms
+cargo run -- --list
+</code></pre>
+<h2 id="features" class="section-header"><a href="#features">Features</a></h2>
+<ul>
+<li>CLI</li>
+<li>Supports different algorithms (IDs are in brackets):
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Bubble_sort">Bubble sort</a> [<code>bubble</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Cocktail_shaker_sort">Cocktail sort</a> [<code>cocktail</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Cycle_sort">Cycle sort</a> [<code>cycle</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Gnome_sort">Gnome sort</a> [<code>gnome</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Heapsort">Heap sort</a> [<code>heap</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Insertion_sort">Insertion sort</a> [<code>insertion</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Merge_sort">Merge sort</a> [<code>merge</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Quicksort">Quicksort</a> [<code>quicksort</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Selection_sort">Selection sort</a> [<code>selection</code>]</li>
+<li><a href="https://en.wikipedia.org/wiki/Shellsort">Shellsort</a> [<code>shellsort</code>]</li>
+</ul>
+</li>
+<li>Animation controls:
+<ul>
+<li><kbd>Space</kbd> - pause/resume</li>
+<li><kbd>↑</kbd> - 2x faster</li>
+<li><kbd>↓</kbd> - 2x slower</li>
+</ul>
+</li>
+<li>Easy-to-use algorithm API</li>
+<li>Algorithms can highlight important array elements</li>
+<li>Code is well-documented</li>
+</ul>
+<h2 id="building-docs" class="section-header"><a href="#building-docs">Building docs</a></h2>
+<pre><code class="language-bash">./docs.sh
+</code></pre>
+<p><strong>Nightly Rust is required for building docs</strong> because it has <a href="https://github.com/rust-lang/rust/issues/43466">infra doc link resolution</a> which is currently unstable.</p>
+<h2 id="todo" class="section-header"><a href="#todo">TODO</a></h2>
+<ol>
+<li>User-friendly GUI</li>
+<li>More algorithms</li>
+<li>Sound?</li>
+</ol>
+<h2 id="contributing" class="section-header"><a href="#contributing">Contributing</a></h2>
+<p><a href="https://dmitmel.github.io/sorting-visualization"><strong>Documentation</strong></a></p>
+<p>PRs are appreciated!</p>
+<h2 id="license" class="section-header"><a href="#license">License</a></h2>
+<p><a href="https://github.com/dmitmel/sorting-visualization/blob/master/LICENSE">MIT</a> © <a href="https://github.com/dmitmel">Dmytro Meleshko</a></p>
+</div><h2 id='modules' class='section-header'><a href="#modules">Modules</a></h2>
+<table><tr class='module-item'><td><a class="mod" href="algorithms/index.html" title='sorting_visualization::algorithms mod'>algorithms</a></td><td class='docblock-short'><p>Different sorting algorithms as well as the general
+<a href="../sorting_visualization/algorithms/trait.Algorithm.html"><code>Algorithm</code></a> trait.</p>
+</td></tr><tr class='module-item'><td><a class="mod" href="app/index.html" title='sorting_visualization::app mod'>app</a></td><td class='docblock-short'><p>The <a href="../sorting_visualization/app/struct.App.html" title="`App`"><code>App</code></a> struct and some constants.</p>
+</td></tr><tr class='module-item'><td><a class="mod" href="array/index.html" title='sorting_visualization::array mod'>array</a></td><td class='docblock-short'><p>The <a href="../sorting_visualization/array/struct.Array.html"><code>Array</code></a> struct.</p>
+</td></tr><tr class='module-item'><td><a class="mod" href="cli/index.html" title='sorting_visualization::cli mod'>cli</a></td><td class='docblock-short'><p>Command-line interface and command-line argument parsing. Uses <a href="../clap/index.html" title="clap">clap</a> under
+the hood.</p>
+</td></tr><tr class='module-item'><td><a class="mod" href="state/index.html" title='sorting_visualization::state mod'>state</a></td><td class='docblock-short'><p>Structs and type definitions that describe the app state.</p>
+</td></tr></table><h2 id='constants' class='section-header'><a href="#constants">Constants</a></h2>
+<table><tr class='module-item'><td><a class="constant" href="constant.OPENGL_VERSION.html" title='sorting_visualization::OPENGL_VERSION constant'>OPENGL_VERSION</a></td><td class='docblock-short'><p>Required version of OpenGL.</p>
+</td></tr><tr class='module-item'><td><a class="constant" href="constant.WINDOW_SIZE.html" title='sorting_visualization::WINDOW_SIZE constant'>WINDOW_SIZE</a></td><td class='docblock-short'><p>Initial size of the main window.</p>
+</td></tr><tr class='module-item'><td><a class="constant" href="constant.WINDOW_TITLE.html" title='sorting_visualization::WINDOW_TITLE constant'>WINDOW_TITLE</a></td><td class='docblock-short'><p>Title of the main window.</p>
+</td></tr></table><h2 id='functions' class='section-header'><a href="#functions">Functions</a></h2>
+<table><tr class='module-item'><td><a class="fn" href="fn.main.html" title='sorting_visualization::main fn'>main</a></td><td class='docblock-short'></td></tr><tr class='module-item'><td><a class="fn" href="fn.run.html" title='sorting_visualization::run fn'>run</a></td><td class='docblock-short'></td></tr></table></section><section id="search" class="content hidden"></section><section class="footer"></section><aside id="help" class="hidden"><div><h1 class="hidden">Help</h1><div class="shortcuts"><h2>Keyboard Shortcuts</h2><dl><dt><kbd>?</kbd></dt><dd>Show this help dialog</dd><dt><kbd>S</kbd></dt><dd>Focus the search field</dd><dt><kbd>↑</kbd></dt><dd>Move up in search results</dd><dt><kbd>↓</kbd></dt><dd>Move down in search results</dd><dt><kbd>↹</kbd></dt><dd>Switch tab</dd><dt><kbd>&#9166;</kbd></dt><dd>Go to active search result</dd><dt><kbd>+</kbd></dt><dd>Expand all sections</dd><dt><kbd>-</kbd></dt><dd>Collapse all sections</dd></dl></div><div class="infos"><h2>Search Tricks</h2><p>Prefix searches with a type followed by a colon (e.g., <code>fn:</code>) to restrict the search to a given type.</p><p>Accepted types are: <code>fn</code>, <code>mod</code>, <code>struct</code>, <code>enum</code>, <code>trait</code>, <code>type</code>, <code>macro</code>, and <code>const</code>.</p><p>Search functions by type signature (e.g., <code>vec -> usize</code> or <code>* -> vec</code>)</p><p>Search multiple things at once by splitting your query with comma (e.g., <code>str,u8</code> or <code>String,struct:Vec,test</code>)</p></div></div></aside><script>window.rootPath = "../";window.currentCrate = "sorting_visualization";</script><script src="../aliases.js"></script><script src="../main.js"></script><script defer src="../search-index.js"></script></body></html>
